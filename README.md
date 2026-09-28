@@ -4,6 +4,12 @@ NovaTech is a responsive, multi-page e-commerce demonstration built with HTML, C
 
 > **Academic demo:** The cart is functional, but checkout and newsletter submission are intentionally simulated. The site does not collect personal or payment data.
 
+## Live Demo
+
+**[Launch the NovaTech storefront](https://nadeemhshehata.github.io/novatech-commerce-experience/)**
+
+Source repository: [nadeemhshehata/novatech-commerce-experience](https://github.com/nadeemhshehata/novatech-commerce-experience)
+
 ## Group Members
 
 | Name | Username | Student ID |
@@ -62,16 +68,12 @@ node scripts/validate-site.mjs
 
 The check confirms that required pages and local links exist, the six products are present, group details match the roster, JavaScript parses, IDs are unique, and no remote page assets are used.
 
-## Publish with GitHub Pages
+## GitHub Pages Deployment
 
-1. Create a **public** GitHub repository named `novatech-store`.
-2. Push this folder to the repository’s `main` branch.
-3. Open **Settings → Pages** in GitHub.
-4. Under **Build and deployment**, select **Deploy from a branch**.
-5. Choose **main** and **/(root)**, then select **Save**.
-6. Submit the public URL shown by GitHub Pages, normally:
+This project is published from the repository’s `main` branch using GitHub Pages. Future changes deploy by committing and pushing to `main`.
 
-   `https://YOUR-USERNAME.github.io/novatech-store/`
+- Live site: `https://nadeemhshehata.github.io/novatech-commerce-experience/`
+- Public source: `https://github.com/nadeemhshehata/novatech-commerce-experience`
 
 ## Privacy Design
 
