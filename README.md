@@ -1,91 +1,109 @@
-# NovaTech E-Commerce Website — Task 1
+# E-Commerce Web Application
 
-NovaTech is a responsive, multi-page e-commerce demonstration built with HTML, CSS, and JavaScript and designed for public hosting on GitHub Pages.
+**NovaTech** is a responsive, multi-page e-commerce storefront built with **HTML, CSS, and vanilla JavaScript**. It demonstrates client-side product discovery, cart state management, accessible UI patterns, and privacy-conscious design without requiring a framework or backend.
 
-> **Academic demo:** The cart is functional, but checkout and newsletter submission are intentionally simulated. The site does not collect personal or payment data.
+[**Live demo ↗**](https://nadeemhshehata.github.io/novatech-commerce-experience/) · [**Browse the source ↗**](.) 
 
-## Live Demo
+> **Project scope:** A collaborative academic frontend project, not a production store. Checkout and newsletter submission are simulations; no payments, orders, accounts, or emails are processed.
 
-**[Launch the NovaTech storefront](https://nadeemhshehata.github.io/novatech-commerce-experience/)**
+## Features
 
-Source repository: [nadeemhshehata/novatech-commerce-experience](https://github.com/nadeemhshehata/novatech-commerce-experience)
+- **Interactive catalog:** Six products, instant keyword search, and category filtering.
+- **Persistent cart:** Add or remove products, adjust quantities, and retain the cart across page visits using browser `localStorage`.
+- **Order calculation:** Dynamic subtotal, $9.99 shipping below $50, and free shipping at $50 or more.
+- **Responsive interface:** Mobile navigation and layouts adapted for smaller screens.
+- **Accessibility:** Semantic HTML, skip-to-content links, visible keyboard focus, form labels, ARIA status messages, and reduced-motion support.
+- **Privacy-first demo:** No analytics, remote assets, checkout processing, or customer-data collection. A privacy control clears locally saved cart data.
+- **Supporting content:** About, team blog, privacy, and business/technology strategy pages.
 
-## Group Members
+## Tech Stack
 
-| Name | Username | Student ID |
-|---|---|---:|
-| Nadeem Hassan | Hass3285 | 169093285 |
-| Elias Zubaidi | Zuba5051 | 169065051 |
-| Awale Hussein | Huss8976 | 169038976 |
-| Hasan Muhammad | Hasa9724 | 169099724 |
-| Omeed Attayi | atta0147 | 169060147 |
+| Layer | Technology |
+| --- | --- |
+| Structure | HTML5 |
+| Styling | CSS3 (responsive layout) |
+| Interaction | Vanilla JavaScript (ES6+) |
+| Persistence | Browser `localStorage` |
+| Hosting | GitHub Pages |
+| Validation | Node.js, dependency-free site validation script, GitHub Actions |
 
-## Assignment Checklist
+**Architecture:** This is a static, client-rendered website. The product catalog is defined in `js/main.js`; event handlers manage search, filtering, cart updates, mobile navigation, sharing, and demo flows. Cart items are stored in the browser rather than a remote database.
 
-- **Platform selection:** GitHub Pages, using a custom static storefront with client-side e-commerce interactions.
-- **Home page:** Hero, store benefits, featured products, project values, and newsletter demo.
-- **Blog page:** Five complete introductory articles—one from every group member—covering the website purpose, customer experience, privacy, product discovery, cart design, and roadmap.
-- **Social technology:** Every team article includes native device sharing with a copy-link fallback.
-- **Business and technology strategy:** A dedicated page applies the eight e-commerce technology features, all eight business-model elements, B2C and sales-revenue choices, competitive strategy, value chain, client/server architecture, mobile platform, cloud hosting, DNS/URLs, HTTPS, TCP/IP, and launch-readiness boundaries.
-- **About page:** Mission, story, and profiles for all five group members.
-- **Product page:** Six products with category filters, live search, prices, descriptions, and add-to-cart controls.
-- **Privacy implementation:** Accurate policy, no analytics or third-party assets, local-only cart storage, and a working “Clear saved cart” control.
-- **E-commerce support:** Persistent shopping cart, quantity controls, shipping calculation, order total, and safe demo checkout.
-- **Responsive and accessible:** Mobile navigation, keyboard focus, skip link, semantic headings, form labels, live status messages, and reduced-motion support.
+## Explore the Demo
 
-## Files
-
-```text
-ecommerce-site/
-├── index.html
-├── products.html
-├── blog.html
-├── strategy.html
-├── about.html
-├── privacy.html
-├── cart.html
-├── css/style.css
-├── js/main.js
-├── scripts/validate-site.mjs
-├── .nojekyll
-└── README.md
-```
+1. Open the [live storefront](https://nadeemhshehata.github.io/novatech-commerce-experience/).
+2. Visit **Products** and filter by category or search for a product.
+3. Add items to the cart, adjust their quantities, and review totals and shipping.
+4. Reload the page to see that the cart persists in your browser.
+5. Visit **Privacy** to clear stored cart data.
 
 ## Run Locally
 
-No installation or build step is required. From this folder, start any static server, for example:
+No dependency installation or build step is needed. Clone the repository and run a local web server:
 
 ```bash
+git clone https://github.com/nadeemhshehata/novatech-commerce-experience.git
+cd novatech-commerce-experience
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Then visit **http://localhost:8000**.
 
-## Validate
+If you rename this repository, update the clone URL and folder name above.
 
-Run the dependency-free site check before submission:
+## Validation
+
+Requires Node.js:
 
 ```bash
 node scripts/validate-site.mjs
 ```
 
-The check confirms that required pages and local links exist, the six products are present, group details match the roster, JavaScript parses, IDs are unique, and no remote page assets are used.
+This script performs **static checks** for required pages and links, duplicate element IDs, JavaScript syntax, product count, accessibility hooks, and project-specific content. GitHub Actions runs it on pushes and pull requests to `main`.
 
-It also verifies five individually authored and shareable blog posts, the eight e-commerce technology features, the eight business-model elements, key Internet and web architecture concepts, and working privacy controls.
+These checks do **not** replace browser-based functional testing, performance auditing, or end-to-end tests.
 
-## Course Concept Implementation
+## Project Structure
 
-- **Chapter 1 — E-commerce:** The storefront demonstrates ubiquity, global reach, universal standards, richness, interactivity, information density, device-local customization, and social sharing. It identifies NovaTech as a responsive B2C e-tailer.
-- **Chapter 2 — Business models:** The Strategy page documents the value proposition, sales revenue model, market opportunity, competitive environment, competitive advantage, market strategy, organizational development, management team, value chain, value web, and focused-differentiation approach.
-- **Chapter 3 — Infrastructure:** The site explains its public URL, DNS and HTTPS delivery, client/server flow, responsive mobile platform, managed cloud hosting, and the TCP/IP and packet-routing infrastructure supplied by the Internet.
+```text
+.
+├── index.html             # Landing page
+├── products.html          # Searchable product catalog
+├── cart.html              # Persistent cart and totals
+├── about.html             # Team and project background
+├── blog.html              # Team-authored articles
+├── strategy.html          # Business and technology analysis
+├── privacy.html           # Data-handling details and controls
+├── css/style.css          # Styling and responsive layouts
+├── js/main.js             # Catalog and client-side interactions
+├── scripts/validate-site.mjs
+└── .github/workflows/validate.yml
+```
 
-## GitHub Pages Deployment
+## Design Decisions
 
-This project is published from the repository’s `main` branch using GitHub Pages. Future changes deploy by committing and pushing to `main`.
+- **Vanilla JavaScript:** Keeps the app lightweight, dependency-free, and easy to deploy on static hosting.
+- **Browser-local cart:** Makes state persistence demonstrable without a server or storing personal details.
+- **Delegated click handlers:** Supports product and cart buttons inserted dynamically into the DOM.
+- **Explicit demo boundaries:** Checkout and newsletter interactions tell visitors that submissions are not processed.
+- **Accessible navigation:** Keyboard and assistive-technology cues are incorporated into the interface rather than treated as optional extras.
 
-- Live site: `https://nadeemhshehata.github.io/novatech-commerce-experience/`
-- Public source: `https://github.com/nadeemhshehata/novatech-commerce-experience`
+## Limitations & Next Steps
 
-## Privacy Design
+This prototype does not have a backend API, authentication, database, real inventory, or payment integration. The product catalog is hard-coded, and the validation script checks structure and source content rather than real user journeys.
 
-The only saved value is `novatech_cart` in the visitor’s own browser local storage. Newsletter input is validated and immediately discarded; checkout is a visible demonstration; no analytics, cookies, external fonts, or remote images are loaded by the site.
+Potential extensions include automated browser tests, a separate API and database, server-side stock checks, user accounts, and a payment-provider sandbox. These are **future ideas**, not existing features.
+
+## Contributors & Project Context
+
+Created as a collaborative academic project by **Nadeem Hassan, Elias Zubaidi, Awale Hussein, Hasan Muhammad, and Omeed Attayi**. Team-written articles and project background remain available in the website.
+
+This repository showcases the implemented storefront and technical choices. Individual contribution boundaries are not documented in the source history, so this README does not claim sole authorship.
+
+## Deployment
+
+The site is hosted on GitHub Pages from `main`.
+
+**Current live URL:** https://nadeemhshehata.github.io/novatech-commerce-experience/
+
+If the repository is renamed, check the GitHub Pages settings and update the live URL in this README; GitHub Pages addresses are tied to repository names.
